@@ -66,7 +66,75 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    animation: fadeInScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.calendar-grid.animating .calendar-cell {
+    animation: none;
+    
+}
+
+
+.calendar-cell:nth-child(1) {
+    animation-delay: 0.02s;
+}
+
+.calendar-cell:nth-child(2) {
+    animation-delay: 0.04s;
+}
+
+.calendar-cell:nth-child(3) {
+    animation-delay: 0.06s;
+}
+
+.calendar-cell:nth-child(4) {
+    animation-delay: 0.08s;
+}
+
+.calendar-cell:nth-child(5) {
+    animation-delay: 0.10s;
+}
+
+.calendar-cell:nth-child(6) {
+    animation-delay: 0.12s;
+}
+
+.calendar-cell:nth-child(7) {
+    animation-delay: 0.14s;
+}
+
+
+.calendar-cell:nth-child(n+8) {
+    animation-delay: 0.15s;
+}
+
+.calendar-cell:nth-child(n+15) {
+    animation-delay: 0.18s;
+}
+
+.calendar-cell:nth-child(n+22) {
+    animation-delay: 0.21s;
+}
+
+.calendar-cell:nth-child(n+29) {
+    animation-delay: 0.24s;
+}
+
+.calendar-cell:nth-child(n+36) {
+    animation-delay: 0.27s;
 }
 
 .calendar-cell:hover {

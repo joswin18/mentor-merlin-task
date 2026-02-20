@@ -205,7 +205,7 @@ function Schedule() {
                                 No calendar data available
                             </div>
                         ) : (
-                            <div className="calendar-grid">
+                            <div className="calendar-grid" key={`${viewYear}-${viewMonth}`}>
                                 {calendarDays.map((item, idx) => (
                                     <div
                                         key={idx}
@@ -316,7 +316,7 @@ function Schedule() {
                 </div>
             </div>
 
-            
+
             {isModalOpen && (
                 <div className="modal-overlay">
                     <div className="modal-wrapper">
