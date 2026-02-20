@@ -212,5 +212,11 @@ async function start() {
   }
 }
 
-start();
+// Only listen when running locally (not on Vercel serverless)
+if (!process.env.VERCEL) {
+  start();
+}
+
+export default app;
+
 
