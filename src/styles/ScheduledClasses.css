@@ -1,0 +1,150 @@
+.scheduled-classes-page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #111111;
+}
+
+.scheduled-classes-shell {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 54px;
+}
+
+.scheduled-classes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.scheduled-classes-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.scheduled-classes-add-btn {
+  background: #6a4a7b;
+  color: #ffffff;
+  border: none;
+  padding: 16px 28px;
+  min-width: 220px;
+  border-radius: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.scheduled-classes-add-btn:hover {
+  background: #5a3a6b;
+}
+
+.scheduled-classes-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.scheduled-month-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  column-gap: 36px;
+  align-items: start;
+}
+
+.scheduled-month-label {
+  padding-top: 36px;
+  color: #111;
+}
+
+.scheduled-month-name {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.scheduled-month-year {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.scheduled-slots-grid {
+  display: flex;
+  gap: 26px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.scheduled-slot-stack {
+  width: 132px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.scheduled-slot-card {
+  background: #dedbff;
+  border-radius: 2px;
+  height: 112px;
+  padding: 14px 14px 12px;
+  position: relative;
+}
+
+.scheduled-slot-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.scheduled-slot-day {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3e3e3e;
+}
+
+.scheduled-slot-topic {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3e3e3e;
+}
+
+.scheduled-slot-date {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-size: 19px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.scheduled-slot-delete {
+  margin-top: 12px;
+  height: 34px;
+  background: #ffffff;
+  border: 1px solid #b8b8b8;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scheduled-slot-delete:hover {
+  background: #f6f6f6;
+}
+
+@media (max-width: 1100px) {
+  .scheduled-classes-shell {
+    padding: 26px 18px;
+  }
+
+  .scheduled-month-row {
+    grid-template-columns: 160px 1fr;
+    column-gap: 18px;
+  }
+}
+
+
