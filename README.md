@@ -147,17 +147,6 @@ npm run dev      # Start with Nodemon (auto-reload)
 npm start        # Start production server
 ```
 
-## API Endpoints
-
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| POST | `/api/auth/signup` | ❌ | Register user |
-| POST | `/api/auth/login` | ❌ | Login user |
-| GET | `/api/schedule/:year/:month` | ✅ | Get calendar for month |
-| POST | `/api/slots/select` | ✅ | Select a slot |
-| DELETE | `/api/slots/:id` | ✅ | Delete a selected slot |
-| GET | `/api/slots/selected` | ✅ | Get user's selected slots |
-
 ## Deployment
 
 ### Vercel (Recommended)
