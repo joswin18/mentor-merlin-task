@@ -147,17 +147,6 @@ npm run dev      # Start with Nodemon (auto-reload)
 npm start        # Start production server
 ```
 
-## API Endpoints
-
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| POST | `/api/auth/signup` | ❌ | Register user |
-| POST | `/api/auth/login` | ❌ | Login user |
-| GET | `/api/schedule/:year/:month` | ✅ | Get calendar for month |
-| POST | `/api/slots/select` | ✅ | Select a slot |
-| DELETE | `/api/slots/:id` | ✅ | Delete a selected slot |
-| GET | `/api/slots/selected` | ✅ | Get user's selected slots |
-
 ## Deployment
 
 ### Vercel (Recommended)
@@ -204,32 +193,3 @@ VITE_API_URL=https://your-backend-url.com
 - Verify backend is running: `http://localhost:4000/api/health` should return `{"status":"ok"}`
 - Check `VITE_API_URL` in frontend `.env` matches backend URL
 - Confirm `CLIENT_ORIGIN` in backend `.env` matches frontend URL (for CORS)
-
-### MongoDB connection error
-
-- Verify `MONGO_URI` is correct and includes credentials
-- Ensure MongoDB Atlas IP whitelist allows your IP (or use 0.0.0.0/0 for dev)
-- Test connection: `mongosh "your-connection-string"`
-
-### Port already in use
-
-- Change `PORT` in `backend/.env` (default: 4000)
-- Or kill existing process: `lsof -ti:4000 | xargs kill -9` (macOS/Linux)
-
-## Development Notes
-
-- Frontend uses Vite for fast HMR (hot module reload)
-- Backend uses Nodemon for auto-restart on file changes
-- All API requests use the shared `apiFetch` utility (see `src/utils/api.js`)
-- JWT token stored in localStorage after login
-
-## Contributing
-
-1. Create a feature branch: `git checkout -b feature/my-feature`
-2. Commit changes: `git commit -m "Add my feature"`
-3. Push: `git push origin feature/my-feature`
-4. Open a Pull Request
-
-## License
-
-MIT
