@@ -5,12 +5,19 @@ import mongoose from 'mongoose';
 import app from '../backend/server.js';
 
 // Cache the DB connection across warm invocations
-let isConnected = false;
+let connectionPromise = null;
 
 async function connectDB() {
-    if (isConnected) return;
-    await mongoose.connect(process.env.MONGO_URI);
-    isConnected = true;
+    if (!connectionPromise) {
+        if (!process.env.MONGO_URI) {
+            throw new Error('MONGO_URI environment variable is not set.');
+        }
+        if (!process.env.JWT_SECRET) {
+            throw new Error('JWT_SECRET environment variable is not set.');
+        }
+        connectionPromise = mongoose.connect(process.env.MONGO_URI);
+    }
+    return connectionPromise;
 }
 
 export default async function handler(req, res) {
@@ -18,7 +25,7 @@ export default async function handler(req, res) {
         await connectDB();
         app(req, res);
     } catch (err) {
-        console.error('Handler error:', err);
-        res.status(500).json({ message: 'Server initialisation failed.', error: err.message });
+        console.error('[Vercel handler] Startup error:', err.message);
+        res.status(500).json({ message: err.message });
     }
 }
